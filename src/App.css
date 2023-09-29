@@ -32,6 +32,7 @@
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   z-index: 10;
   width: 100vw;
+  display: flex;
 
 }
 .loginbg{
