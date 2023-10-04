@@ -5,6 +5,7 @@ import { checkValidate } from '../utils/validate';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, updateProfile  } from "firebase/auth";
 import { auth } from '../utils/firebase';
 import { useDispatch } from "react-redux";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 import { addUser, removeUser } from '../utils/userSlice';
 
 
@@ -35,8 +36,8 @@ const Login = () => {
                         const user = userCredential.user;
                         updateProfile(auth, {
                             displayName: name.current.value, 
-                            photoURL: "https://example.com/jane-q-user/profile.jpg"
-                          }).then(() => {
+                            photoURL: USER_AVATAR,
+                        }).then(() => {
                             const {uid,email,displayName, photoURL} = auth.currentUser;
                             dispatch(addUser({uid: uid,email:email,displayName:displayName,photoURL:photoURL}))
 
@@ -84,8 +85,8 @@ const Login = () => {
         <div>
             <Header />
             <div className="loginbg w-screen" >
-                <img src='https://assets.nflxext.com/ffe/siteui/vlv3/f85718e8-fc6d-4954-bca0-f5eaf78e0842/b3d0da7f-b685-4fd1-9c84-53e4e60aa0d7/US-en-20230918-popsignuptwoweeks-perspective_alpha_website_large.jpg'
-                    alt='logo' />
+                <img 
+src={BG_URL}                    alt='logo' />
             </div>
             <div>
                 <form onSubmit={(e) => e.preventDefault()} className="form my-36 mx-auto right-0 left-0 text-white">
