@@ -8,6 +8,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO } from "../utils/constants";
+import { toggleGptSearchView } from '../utils/gptSlice';
 
 
 const Header = () => {
@@ -41,6 +42,10 @@ const Header = () => {
         //when component unmounts
         return () => unsubscribe();
     }, [])
+    const handleGptSearchClick =() => {
+        dispatch(toggleGptSearchView())
+
+    }
     return (
         <div className="headerClass from-black  justify-between ">
             <div>
@@ -49,6 +54,7 @@ const Header = () => {
             </div>
             {user &&
                 <div className='flex p-2'>
+                    <button onClick={handleGptSearchClick} className='py-2 px-4 mx-4 my-2 rounded-lg bg-purple-800'>GPT Search</button>
                     <button onClick={handleSignOut} className='text-white font-bold'>Sign out</button>
                 </div>
             }
