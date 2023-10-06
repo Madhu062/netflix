@@ -85,8 +85,8 @@ const Login = () => {
         <div>
             <Header />
             <div className="loginbg w-screen" >
-                <img 
-src={BG_URL}                    alt='logo' />
+               <img 
+src={BG_URL}                    alt='logo' /> 
             </div>
             <div>
                 <form onSubmit={(e) => e.preventDefault()} className="form my-36 mx-auto right-0 left-0 text-white">
