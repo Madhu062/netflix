@@ -6,10 +6,10 @@ const GptSearch = () => {
   return (
     <div>
       <div className="absolute -z-10">
-      <img 
-src={BG_URL}                    alt='logo' />
+        <img
+          src={BG_URL} alt='logo' />
       </div>
-     
+
       <GptSearchBar />
       <GptMovieSuggestions />
     </div>
